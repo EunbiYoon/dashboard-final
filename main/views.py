@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from comments.models import Post
+from sections.models import Post
 
 # Create your views here.
 def homeView(request):

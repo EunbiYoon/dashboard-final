@@ -1,6 +1,14 @@
 from django.shortcuts import render,redirect
-from comments.models import Category, Post
-from comments.forms import CommentForm
+from sections.models import Category, Post
+from sections.forms import CommentForm
+
+# Create your views here.
+def frontpageView(request):
+    posts = Post.objects.all()
+    context={
+        'posts_set':posts
+    }
+    return render(request, 'frontpage.html', context)
 
 def detailView(request, slug):
     post=Post.objects.get(slug=slug)

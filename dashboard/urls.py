@@ -17,8 +17,7 @@ from django.contrib import admin
 from django.urls import path
 from main.views import homeView
 from users.views import loginView, registerView, logoutView
-from comments.views import detailView, categoryView
-from reports.views import bomView, costView, viView
+from sections.views import detailView, categoryView
 
 urlpatterns = [
     #admin
@@ -32,12 +31,8 @@ urlpatterns = [
     path('register/',registerView, name="register_url"),
     path('logout/',logoutView, name="logout_url"),
 
-    #comments
+    # dtail
     path('<slug:slug>/', detailView, name='detail_url'),
     path('category/<slug:slug>/', categoryView, name='category_url'),
 
-    #reports
-    path('bom-comparison/', bomView, name='bom_url'),
-    path('cost-review/', costView, name='cost_url'),
-    path('vi-activity/', viView, name='vi_url'),
 ]
