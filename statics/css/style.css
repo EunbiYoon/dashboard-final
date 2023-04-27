@@ -308,3 +308,28 @@ footer h5{
   font-weight:600;
 }
 
+
+/* comments */
+.detail-category{
+  display: grid;
+  grid-template-rows: 1fr 4fr;
+  text-align: center;
+}
+.detail-category .detail-title{
+  display: grid;
+  grid-row: 1;
+  margin-bottom: 30px;
+}
+.detail-category .detail-comment{
+  display: grid;
+  grid-row: 2;
+  background-color: #10abff;
+}
+textarea{
+  width:250px;
+}
+.detail-category label{
+  display: none;
+}
+
+

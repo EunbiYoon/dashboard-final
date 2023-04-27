@@ -1,6 +1,8 @@
 from django.shortcuts import render,redirect
 from sections.models import Category, Post
 from sections.forms import CommentForm
+from django.views.generic import DeleteView
+from django.urls import reverse_lazy
 
 # Create your views here.
 def frontpageView(request):
@@ -35,3 +37,8 @@ def categoryView(request, slug):
         'category_pair':category
     }
     return render(request,'category.html', context)
+
+class DeletePostView(DeleteView):
+    model=Post
+    template_name='delete_post.html'
+    success_url=reverse_lazy('home')

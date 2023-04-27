@@ -17,7 +17,7 @@ from django.contrib import admin
 from django.urls import path
 from main.views import homeView
 from users.views import loginView, registerView, logoutView
-from sections.views import detailView, categoryView
+from sections.views import detailView, categoryView, DeletePostView
 
 urlpatterns = [
     #admin
@@ -34,5 +34,6 @@ urlpatterns = [
     # dtail
     path('<slug:slug>/', detailView, name='detail_url'),
     path('category/<slug:slug>/', categoryView, name='category_url'),
+    path('delete/<int:pk>/', DeletePostView.as_view(), name="delete_post"),
 
 ]
