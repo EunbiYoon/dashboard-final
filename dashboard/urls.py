@@ -32,8 +32,8 @@ urlpatterns = [
     path('logout/',logoutView, name="logout_url"),
 
     # dtail
-    path('<slug:slug>/', detailView, name='detail_url'),
-    path('category/<slug:slug>/', categoryView, name='category_url'),
+    path('<slug:slug>/', categoryView, name='category_url'),
+    path('<slug:category>/<slug:slug>/', detailView, name='detail_url'),
     path('delete/<int:pk>/', DeletePostView.as_view(), name="delete_post"),
 
 ]

@@ -323,7 +323,6 @@ footer h5{
 .detail-category .detail-comment{
   display: grid;
   grid-row: 2;
-  background-color: #10abff;
 }
 textarea{
   width:250px;
