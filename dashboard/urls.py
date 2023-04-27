@@ -33,7 +33,7 @@ urlpatterns = [
 
     # dtail
     path('<slug:slug>/', categoryView, name='category_url'),
-    path('<slug:category>/<slug:slug>/', detailView, name='detail_url'),
+    path('<slug:slug>/<int:pk>/', detailView, name='detail_url'),
     path('delete/<int:pk>/', DeletePostView.as_view(), name="delete_post"),
 
 ]
