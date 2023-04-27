@@ -25,9 +25,9 @@
             
             {% if user.is_authenticated %}
             <form method="post" action=".">
+                <input type="submit" value="Add comment">
                 {% csrf_token %}
                 {{ form_detail.as_table }}
-                <input type="submit" value="Add comment">
             </form>
             {% endif %}
         </div>
