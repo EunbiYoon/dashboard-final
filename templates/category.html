@@ -7,7 +7,7 @@
             <h2 class="subtitle">{{ cat.title }}</h2>
             <time>{{ cat.date_added|date:"d M, y h:i" }}</time>
             <p> {{ cat.intro }} </p>
-            <a href="{% url 'detail_url' cat.slug %}">Read More</a>
+            <a href="{% url 'detail_url' cat.slug cat.id%}">Read More</a>
         </article>
     {% endfor %}
 {% endblock %}

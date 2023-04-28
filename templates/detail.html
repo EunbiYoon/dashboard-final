@@ -15,7 +15,7 @@
             {% endif %}
             <article style="font-size:0.5rem">
                 {% for comment in post_detail.comment_model.all %}
-                    - {{comment.date_added}}
+                    {{comment.name}}- {{comment.date_added}}
                     <a href="{& url 'delete_post' post_detail.slug %}">(delete)</a>
                     <br/>{{comment.body}}
                     <br/>

@@ -13,7 +13,7 @@ def frontpageView(request):
     return render(request, 'frontpage.html', context)
 
 def detailView(request, slug, pk):
-    post=Post.objects.get(slug=slug)
+    post=Post.objects.get(slug=slug, pk=pk)
 
     if request.method=='POST':
         form=CommentForm(request.POST)
@@ -21,7 +21,7 @@ def detailView(request, slug, pk):
             obj=form.save(commit=False)
             obj.post=post
             obj.save()
-            return redirect('detail_url',slug=post.slug)
+            return redirect('detail_url',slug=post.slug, pk=post.pk)
     else:
         form=CommentForm()
 
