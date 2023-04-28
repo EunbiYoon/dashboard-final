@@ -12,7 +12,7 @@ def frontpageView(request):
     }
     return render(request, 'frontpage.html', context)
 
-def detailView(request, slug):
+def detailView(request, slug, pk):
     post=Post.objects.get(slug=slug)
 
     if request.method=='POST':
@@ -27,7 +27,8 @@ def detailView(request, slug):
 
     context={
         'post_detail':post,
-        'form_detail':form
+        'form_detail':form,
+        'id':pk
     }
     return render(request,'detail.html', context)
 

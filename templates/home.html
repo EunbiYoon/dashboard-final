@@ -10,7 +10,7 @@
                 <h2 class="title">{{ post.title }}</h2>
                 <time>{{ post.date_added|date:"d M, y h:i" }}</time>
                 <p> {{ post.intro }} </p>
-                <a href="{% url 'detail_url' post.slug post.id %}">Read More</a>
+                <a href="{% url 'detail_url' post.slug post.id%}">Read More</a>
             </article>
         {% endfor %}
     </div>

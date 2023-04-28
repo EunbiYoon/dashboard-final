@@ -16,7 +16,7 @@
             <article style="font-size:0.5rem">
                 {% for comment in post_detail.comment_model.all %}
                     - {{comment.date_added}}
-                    <a href="{& url 'delete_post' post_detail.id %}">(delete)</a>
+                    <a href="{& url 'delete_post' post_detail.slug %}">(delete)</a>
                     <br/>{{comment.body}}
                     <br/>
                     <br/>
